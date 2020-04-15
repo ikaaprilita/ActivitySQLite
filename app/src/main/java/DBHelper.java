@@ -25,13 +25,16 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteOpenHelper db) {
+    public void onCreate(SQLiteDatabase db) {
         // TODO Auto-generated method stub
-        db.execSQL("create table mahasiswa" +
-                "(id integer primary key, nim text, nama text, phone text)");
+        db.execSQL(
+                "create table mahasiswa " +
+                        "(id integer primary key, nim text,nama text,phone text)"
+        );
     }
 
-    @Override
+
+        @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // TODO Auto-generated method stub
         db.execSQL("DROP TABLE IF EXISTS mahasiswa");
@@ -61,7 +64,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return  numRows;
     }
 
-    public ArrayList<String> getAllContacts(){
+    public ArrayList<String> getAllCotacts(){
         ArrayList<String> array_List = new ArrayList<String>();
 
         //hp = new HashMap();
